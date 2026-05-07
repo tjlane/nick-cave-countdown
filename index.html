@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nick Cave & The Bad Seeds — La Prima Estate 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0a0705;
+      --bone: #e8dfd0;
+      --sepia: #b89a6e;
+      --rust: #8b3a2a;
+      --ash: #3a3530;
+      --pale: #f2ece2;
+    }
+
+    html, body {
+      width: 100%; min-height: 100vh;
+      background: var(--ink);
+      color: var(--bone);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .drip-line {
+      position: fixed;
+      top: 0; width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(184,154,110,0.15) 40%, transparent);
+      pointer-events: none; z-index: 2;
+      animation: drip 6s ease-in-out infinite alternate;
+    }
+    .drip-line:nth-child(1) { left: 15%; height: 35vh; animation-delay: 0s; }
+    .drip-line:nth-child(2) { left: 32%; height: 20vh; animation-delay: 1.4s; }
+    .drip-line:nth-child(3) { left: 68%; height: 28vh; animation-delay: 0.7s; }
+    .drip-line:nth-child(4) { left: 85%; height: 22vh; animation-delay: 2.1s; }
+    @keyframes drip { from { opacity: 0.4; } to { opacity: 1; } }
+
+    .wrapper {
+      position: relative; z-index: 10;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .ornament {
+      font-size: 1.2rem;
+      letter-spacing: 0.4em;
+      color: var(--sepia);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 0.3s;
+    }
+
+    .rule {
+      width: 160px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--sepia), transparent);
+      margin: 1rem auto;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 0.5s;
+    }
+    .rule.wide { width: 320px; }
+
+    .festival {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      color: var(--sepia);
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 0.6s;
+    }
+
+    .title-block {
+      margin: 1.5rem 0 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1.4s ease forwards 0.8s;
+    }
+    .title-block .prelude {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.2em;
+      color: var(--sepia);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: clamp(3.5rem, 12vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--bone);
+      text-shadow: 0 0 80px rgba(184,154,110,0.2);
+    }
+    h1 span {
+      display: block;
+      font-size: clamp(1.8rem, 5vw, 4rem);
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.15em;
+      color: var(--sepia);
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.06em;
+      color: rgba(232,223,208,0.6);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 1.1s;
+    }
+
+    .location-line {
+      margin-top: 0.4rem;
+      font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sepia);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 1.3s;
+    }
+
+    .countdown-outer {
+      margin: 3rem 0 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1.4s ease forwards 1.5s;
+    }
+    .countdown {
+      display: flex;
+      gap: clamp(1rem, 4vw, 3rem);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .unit {
+      display: flex; flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .unit::after {
+      content: ':';
+      position: absolute;
+      right: clamp(-0.7rem, -2vw, -1.7rem);
+      top: 50%;
+      transform: translateY(-60%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 5rem);
+      color: var(--sepia);
+      opacity: 0.5;
+    }
+    .unit:last-child::after { display: none; }
+
+    .digit {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(3.5rem, 11vw, 8rem);
+      line-height: 1;
+      color: var(--bone);
+      letter-spacing: -0.03em;
+      text-shadow: 0 2px 40px rgba(184,154,110,0.3);
+      position: relative;
+    }
+    .digit.flash { animation: flash 0.12s ease; }
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.55rem, 1.2vw, 0.78rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sepia);
+      margin-top: 0.3rem;
+    }
+
+    .date-stamp {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 2rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(232,223,208,0.45);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 1.8s;
+    }
+
+    .support {
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 2s;
+    }
+    .support p {
+      font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(184,154,110,0.5);
+    }
+    .support strong { color: rgba(184,154,110,0.75); }
+
+    .cross {
+      margin-top: 2.5rem;
+      font-size: 1.4rem;
+      color: var(--sepia);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards 2.2s;
+    }
+
+    .glow-ring {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(600px, 90vw);
+      height: min(600px, 90vw);
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(139,58,42,0.06) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .over-message {
+      display: none;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      color: var(--sepia);
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 480px) {
+      .unit::after { right: -0.6rem; }
+      .countdown { gap: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="drip-line"></div>
+  <div class="drip-line"></div>
+  <div class="drip-line"></div>
+  <div class="drip-line"></div>
+
+  <div class="glow-ring"></div>
+
+  <div class="wrapper">
+
+    <div class="ornament">✦ &nbsp; La Prima Estate 2026 &nbsp; ✦</div>
+    <div class="rule"></div>
+
+    <p class="festival">Parco BussolaDomani · Lido di Camaiore · Toscana</p>
+
+    <div class="title-block">
+      <span class="prelude">Nick Cave &amp;</span>
+      <h1>The Bad<br><span>Seeds</span></h1>
+    </div>
+
+    <p class="subtitle">Live in Concert — Friday 26 June 2026</p>
+    <p class="location-line">Versilia · Italy · 18:00</p>
+
+    <div class="rule wide"></div>
+
+    <div class="countdown-outer">
+      <div class="countdown" id="countdown">
+        <div class="unit">
+          <div class="digit" id="days">--</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="unit">
+          <div class="digit" id="hours">--</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="unit">
+          <div class="digit" id="minutes">--</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="unit">
+          <div class="digit" id="seconds">--</div>
+          <div class="label">Seconds</div>
+        </div>
+      </div>
+      <p class="over-message" id="overMsg">The night is here. Welcome to the bad seeds.</p>
+    </div>
+
+    <p class="date-stamp">26 · VI · MMXXVI</p>
+
+    <div class="rule" style="margin-top:1.5rem;"></div>
+
+    <div class="support">
+      <p>With support: <strong>Sleaford Mods</strong> &amp; <strong>Emiliana Torrini</strong></p>
+    </div>
+
+    <div class="cross">✝</div>
+
+  </div>
+
+  <script>
+    const concert = new Date('2026-06-26T18:00:00+02:00');
+
+    const dEl = document.getElementById('days');
+    const hEl = document.getElementById('hours');
+    const mEl = document.getElementById('minutes');
+    const sEl = document.getElementById('seconds');
+    const overMsg = document.getElementById('overMsg');
+    const countdown = document.getElementById('countdown');
+
+    let prevVals = { d: null, h: null, m: null, s: null };
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function flash(el) {
+      el.classList.remove('flash');
+      void el.offsetWidth;
+      el.classList.add('flash');
+    }
+
+    function tick() {
+      const diff = concert.getTime() - Date.now();
+      if (diff <= 0) {
+        countdown.style.display = 'none';
+        overMsg.style.display = 'block';
+        return;
+      }
+      const totalSec = Math.floor(diff / 1000);
+      const d = Math.floor(totalSec / 86400);
+      const h = Math.floor((totalSec % 86400) / 3600);
+      const m = Math.floor((totalSec % 3600) / 60);
+      const s = totalSec % 60;
+
+      if (d !== prevVals.d) { dEl.textContent = pad(d); if (prevVals.d !== null) flash(dEl); }
+      if (h !== prevVals.h) { hEl.textContent = pad(h); if (prevVals.h !== null) flash(hEl); }
+      if (m !== prevVals.m) { mEl.textContent = pad(m); if (prevVals.m !== null) flash(mEl); }
+      if (s !== prevVals.s) { sEl.textContent = pad(s); if (prevVals.s !== null) flash(sEl); }
+
+      prevVals = { d, h, m, s };
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
