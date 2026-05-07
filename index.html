@@ -482,15 +482,31 @@
       });
     };
 
-    toggleBtn.addEventListener('click', () => {
+    function startPlayback() {
+      if (!ready || !player || playing) return;
+      player.unMute && player.unMute();
+      player.playVideo();
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (!ready || !player) return;
       if (playing) {
         player.pauseVideo();
       } else {
-        player.unMute && player.unMute();
-        player.playVideo();
+        startPlayback();
       }
     });
+
+    function firstInteraction() {
+      startPlayback();
+      document.removeEventListener('pointerdown', firstInteraction);
+      document.removeEventListener('keydown', firstInteraction);
+      document.removeEventListener('touchstart', firstInteraction);
+    }
+    document.addEventListener('pointerdown', firstInteraction, { once: false });
+    document.addEventListener('keydown', firstInteraction, { once: false });
+    document.addEventListener('touchstart', firstInteraction, { once: false });
   </script>
 </body>
 </html>
