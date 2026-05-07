@@ -442,7 +442,7 @@
     let ready = false;
     let playing = false;
 
-    trackEl.textContent = pick.title;
+    trackEl.textContent = 'fare clic ovunque';
 
     const ytTag = document.createElement('script');
     ytTag.src = 'https://www.youtube.com/iframe_api';
@@ -472,6 +472,7 @@
             if (e.data === YT.PlayerState.PLAYING) {
               playing = true;
               glyphEl.textContent = '❚❚';
+              trackEl.textContent = pick.title;
             }
             if (e.data === YT.PlayerState.PAUSED) {
               playing = false;
